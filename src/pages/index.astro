@@ -1,11 +1,27 @@
 ---
+// Components
+import FeaturedCourses from "@/components/FeaturedCourses";
+import Footer from "@/components/Footer.astro";
+import HeroSection from "@/components/HeroSection";
+import Instructors from "@/components/Instructors";
+import MusicSchoolTestimonials from "@/components/TestimonialCards";
+import UpcomingWebinars from "@/components/UpcomingWebinars";
+import WhyChooseUs from "@/components/WhyChooseUs";
+
+
 import Layout from '../layouts/Layout.astro';
 
 const title = 'Music School Project';
 ---
 
 <Layout title={title}>
-	<main>
-		<h1>{title}</h1>
+	<main class="min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02]">
+		<HeroSection client:load/>
+		<FeaturedCourses client:load/>
+		<WhyChooseUs client:load/>
+		<MusicSchoolTestimonials client:load/>
+		<!-- <UpcomingWebinars client:load/>
+		<Instructors client:load/> -->
+		<Footer/>
 	</main>
 </Layout>

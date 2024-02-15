@@ -1,0 +1,25 @@
+---
+import CourseCards from "@/components/CourseCards";
+import courseData from "@/data/music_courses.json";
+
+import Layout from "../layouts/Layout.astro";
+
+const title = "Music School | Courses";
+---
+
+<Layout title={title}>
+  <div class="min-h-screen bg-black py-12 pt-36">
+    <h1
+      class="text-lg md:text-7xl text-center font-sans font-bold mb-8 text-white"
+    >
+      All courses ({courseData.courses.length})
+    </h1>
+    <div class="flex flex-wrap justify-center">
+      {
+        courseData.courses.map((course) => (
+          <CourseCards course={course} client:load />
+        ))
+      }
+    </div>
+  </div>
+</Layout>
