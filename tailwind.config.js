@@ -10,7 +10,7 @@ import { default as flattenColorPalette } from "tailwindcss/lib/util/flattenColo
 // } = require("tailwindcss/lib/util/flattenColorPalette");
 
 // Plugin to add each Tailwind color as a global CSS variable
-function addVariablesForColors({ addBase, theme) }{
+function addVariablesForColors({ addBase, theme }){
   const allColors = flattenColorPalette(theme("colors"));
   const newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, value]) => [`--${key}`, value])
@@ -21,7 +21,7 @@ function addVariablesForColors({ addBase, theme) }{
   });
 }
 
-function addSvgPatterns({ matchUtilities, theme )}{
+function addSvgPatterns({ matchUtilities, theme }){
   matchUtilities(
     {
       "bg-grid": (value)=> ({
